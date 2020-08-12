@@ -40,6 +40,14 @@ export class MenubarComponent implements OnInit {
       menubar.classList.remove("bg-light");
       menubar.classList.remove("navbar-light");
     }
+    this.setActive(this.page);
+  }
+
+  setActive(page) {
+    console.log(page);
+    let navLink = this.el.nativeElement.querySelector("." + page);
+    navLink.classList.remove("transparent-white");
+    navLink.classList.add("active");
   }
 
   navigate(product) {
